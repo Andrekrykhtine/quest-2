@@ -10,7 +10,7 @@ main {
 }
 
 .conteudo {
-    width: 20%;
+    width: 300px
 }
 
 .conteudo .titulo {
@@ -22,7 +22,7 @@ main {
 }
 
 .conteudo .texto-principal {
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #ffffff;
 
@@ -107,4 +107,16 @@ li {
     font-size: 8px;
     font-weight: 400;
     color: #F52E2E;
+}
+
+@media(max-width: 490px ){
+    main{
+        gap: 16px;
+    }
+    .conteudo{
+        margin-top: 15px;
+    }
+    .caixa-formulario{
+        margin-bottom: 15px;
+    }
 }
