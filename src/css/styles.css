@@ -50,7 +50,7 @@ main {
     gap: 0px;
     border-radius: 5px;
     padding: 10px;
-
+    border: 1px solid #000000
 
 }
 
@@ -64,7 +64,8 @@ li {
     border-radius: 5px;
     padding: 10px;
     resize: none;
-    /* margin-bottom: 7px; */
+    border: 1px solid #000000
+
 }
 
 .caixa-formulario .formulario .campos-obrigatorios {
