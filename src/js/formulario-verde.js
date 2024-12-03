@@ -1,6 +1,13 @@
 const btnEnviar = document.getElementById ('enviar')
 const inputText = document.querySelectorAll('.input-text')
 
+inputText.forEach(input => {
+    input.addEventListener('change', () => {
+        if (input.value !== "") {
+            input.classList.add("campo-preenchido");
+        }
+    });
+});
 btnEnviar.addEventListener('click', () => {
     inputText.forEach(input => {
         // Seleciona o elemento de erro correspondente ao input atual

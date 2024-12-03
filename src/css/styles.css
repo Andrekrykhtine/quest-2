@@ -51,7 +51,16 @@ main {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid #000000
+}
+/*remeovendo spinners- setinha pra cima e pra baixo no input number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 li {
@@ -65,7 +74,6 @@ li {
     padding: 10px;
     resize: none;
     border: 1px solid #000000
-
 }
 
 .caixa-formulario .formulario .campos-obrigatorios {
@@ -110,14 +118,17 @@ li {
     color: #F52E2E;
 }
 
-@media(max-width: 490px ){
-    main{
+@media(max-width: 490px) {
+    main { 
+        min-height: 100vh; 
         gap: 16px;
     }
-    .conteudo{
+
+    .conteudo {
         margin-top: 15px;
     }
-    .caixa-formulario{
+
+    .caixa-formulario {
         margin-bottom: 15px;
     }
 }
