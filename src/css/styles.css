@@ -18,28 +18,24 @@ main {
     font-weight: 900;
     color: #ffffff;
     margin-bottom: 11px;
-
 }
 
 .conteudo .texto-principal {
     font-size: 1.5rem;
     font-weight: 400;
     color: #ffffff;
-
 }
 
 .caixa-formulario {
     width: 340px;
     min-height: 378px;
     background-color: #ffffff;
-
 }
 
 .caixa-formulario .formulario {
     margin: 21px;
     display: flex;
     flex-direction: column;
-
 }
 
 .caixa-formulario .formulario .nome,
@@ -57,7 +53,6 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-
 }
 input[type="number"] {
     -moz-appearance: textfield;
@@ -88,11 +83,13 @@ li {
     color: #ffffff;
     background-color: #3CCC87;
     border: none;
-    transition: 0, 3 ease;
+    transition:background-color 0.3s ease;
+    box-shadow: 3px 3px 5px #3CCC87;
 }
 
 .caixa-formulario .formulario .enviar:hover {
     background-color: #2b905f;
+    box-shadow: 3px 3px 5px  #2b905f;
 }
 
 .erro {
@@ -111,14 +108,14 @@ li {
     border: 1px solid #F52E2E;
 }
 
-.erro.campo-erro {
+.erro.campo-erro{
     display: block;
     font-size: 8px;
     font-weight: 400;
     color: #F52E2E;
 }
 
-@media(max-width: 490px) {
+@media(max-width: 700px) {
     main { 
         min-height: 100vh; 
         gap: 16px;
