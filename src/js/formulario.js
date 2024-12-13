@@ -1,56 +1,39 @@
-const btnEnviar = document.getElementById('enviar');
 const inputText = document.querySelectorAll('.input-text');
+const btnEnviar = document.getElementById('enviar');
 
-// Função para atualizar classes com base no valor do input
+// Função para atualizar o estado do campo em tempo real
 function atualizarEstado(input) {
-    const erroElemento = input.nextElementSibling; // Próximo elemento irmão para mensagem de erro
+    const erroElemento = input.nextElementSibling; // Próximo elemento, usado para exibir mensagens de erro
 
     if (input.value.trim() !== "") {
-        // Se o campo NÃO estiver vazio
-        input.classList.add("campo-preenchido"); // Adiciona classe de preenchido
-        input.classList.remove("campo-erro"); // Remove classe de erro
-
-        if (erroElemento?.classList.contains('erro')) {
-            erroElemento.classList.remove('campo-erro'); // Remove o erro do elemento de mensagem
-        }
+        // Se o campo estiver preenchido
+        input.classList.add("campo-preenchido"); // Adiciona a borda verde
+        input.classList.remove("campo-erro"); // Remove a borda vermelha
+        erroElemento?.classList.remove("campo-erro"); // Remove a mensagem de erro
     } else {
-        // Se o campo estiver vazio, remove todas as classes para voltar ao estado inicial
-        input.classList.remove("campo-preenchido", "campo-erro");
-
-        if (erroElemento?.classList.contains('erro')) {
-            erroElemento.classList.remove('campo-erro'); // Remove a classe de erro do elemento de mensagem
-        }
+        // Se o campo for esvaziado
+        input.classList.remove("campo-preenchido", "campo-erro"); // Remove bordas e estados
+        erroElemento?.classList.remove("campo-erro"); // Remove a mensagem de erro
     }
 }
 
-function verificarEstado (input){
-    const erroElemento = input.nextElementSibling; // Seleciona o próximo elemento irmão (usado para mensagens de erro).
+// Função para validar os campos ao clicar no botão "Enviar"
+function validarCampos() {
+    inputText.forEach(input => {
+        const erroElemento = input.nextElementSibling;
 
-    if (input.value.trim() !== "") {
-        // Se o campo NÃO estiver vazio
-        input.classList.add("campo-preenchido"); // Adiciona a classe que indica preenchimento
-        input.classList.remove("campo-erro"); // Remove a classe de erro, caso exista
-        
-        if (erroElemento?.classList.contains('erro')) {
-            erroElemento.classList.remove('campo-erro'); // Remove o estilo de erro do elemento de mensagem
+        if (input.value.trim() === "") {
+            // Se o campo estiver vazio, aplica o erro
+            input.classList.add("campo-erro");
+            erroElemento?.classList.add("campo-erro");
         }
-    } else {
-        // Se o campo estiver vazio
-        input.classList.add("campo-erro"); // Adiciona a classe de erro
-        input.classList.remove("campo-preenchido"); // Remove a classe de preenchimento
-
-        if (erroElemento?.classList.contains('erro')) {
-            erroElemento.classList.add('campo-erro'); // Adiciona a classe de erro no elemento de mensagem
-        }
-    }
+    });
 }
 
-// Adiciona o evento de mudança para cada input
- inputText.forEach(input => {
-    input.addEventListener('change', () => atualizarEstado(input));
- });
-
-// Adiciona o evento de clique no botão enviar
-btnEnviar.addEventListener('click', () => {
-    inputText.forEach(input => verificarEstado(input));
+// Atualiza o estado dos campos em tempo real enquanto o usuário digita
+inputText.forEach(input => {
+    input.addEventListener('input', () => atualizarEstado(input));
 });
+
+// Valida os campos ao clicar no botão "Enviar"
+btnEnviar.addEventListener('click', () => validarCampos());
