@@ -48,12 +48,14 @@ main {
     padding: 10px;
     border: 1px solid #000000
 }
+
 /*remeovendo spinners- setinha pra cima e pra baixo no input number*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -83,13 +85,13 @@ li {
     color: #ffffff;
     background-color: #3CCC87;
     border: none;
-    transition:background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     box-shadow: 3px 3px 5px #3CCC87;
 }
 
 .caixa-formulario .formulario .enviar:hover {
     background-color: #2b905f;
-    box-shadow: 3px 3px 5px  #2b905f;
+    box-shadow: 3px 3px 5px #2b905f;
 }
 
 .erro {
@@ -108,7 +110,7 @@ li {
     border: 1px solid #F52E2E;
 }
 
-.erro.campo-erro{
+.erro.campo-erro {
     display: block;
     font-size: 8px;
     font-weight: 400;
@@ -116,8 +118,8 @@ li {
 }
 
 @media(max-width: 700px) {
-    main { 
-        min-height: 100vh; 
+    main {
+        min-height: 100vh;
         gap: 16px;
     }
 
